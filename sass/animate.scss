@@ -1,0 +1,267 @@
+@-webkit-keyframes an-vision {
+  0%   {transform:translate3d(-50%, 0, 0) scale(1);}
+  100%   {transform:translate3d(-50%, 0, 0) scale(1.08);}
+}
+
+@keyframes an-vision{
+  0%   {transform:translate3d(-50%, 0, 0) scale(1);}
+  100%   {transform:translate3d(-50%, 0, 0) scale(1.08);}
+}
+@-webkit-keyframes an-vision-after {
+  0%   {transform:translate3d(-50%, 0, 0) scale(1.08);}
+  100%   {transform:translate3d(-50%, 0, 0) scale(1.12);}
+}
+
+@keyframes an-vision-after{
+  0%   {transform:translate3d(-50%, 0, 0) scale(1.08);}
+  100%   {transform:translate3d(-50%, 0, 0) scale(1.12);}
+}
+.an-move-up-more {
+  -webkit-animation-name: an-vision;
+  animation-name: an-vision;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+
+
+
+@-webkit-keyframes an-move-out {
+  0%   {transform: translate3d(100%,0,0);}
+  100%   {transform: translate3d(0,0,0);}
+}
+
+@keyframes an-move-out{
+  0%   {transform: translate3d(100%,0,0);}
+  100%   {transform: translate3d(0,0,0);}
+}
+.an-move-out {
+  -webkit-animation-name: an-move-out;
+  animation-name: an-move-out;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes an-move-up-more {
+  0%   {opacity: 0; transform: translate3d(0,20%,0);}
+  100%   {opacity: 1; transform: translate3d(0,0,0);}
+}
+
+@keyframes an-move-up-more{
+  0%   {opacity: 0; transform: translate3d(0,20%,0);}
+  100%   {opacity: 1; transform: translate3d(0,0,0);}
+}
+.an-move-up-more {
+  -webkit-animation-name: an-move-up-more;
+  animation-name: an-move-up-more;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+
+
+@-webkit-keyframes an-move-up {
+  0%   {transform: translate3d(0,20%,0);}
+  100%   {transform: translate3d(0,0,0);}
+}
+
+@keyframes an-move-up{
+  0%   {transform: translate3d(0,20%,0);}
+  100%   {transform:translate3d(0,0,0);}
+}
+.an-move-up {
+  -webkit-animation-name: an-move-up;
+  animation-name: an-move-up;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes an-move-down {
+  0%   {transform: translate3d(0,-200%,0)}
+  100% {transform: translate3d(0,0,0);}
+}
+
+@keyframes an-move-down {
+  0%   {transform: translate3d(0,-200%,0)}
+  100% {transform: translate3d(0,0,0);}
+}
+.an-move-down {
+	  -webkit-animation-name: an-move-down;
+	  animation-name: an-move-down;
+	  animation-fill-mode: forwards;
+}
+
+
+@-webkit-keyframes an-move-right {
+  0 {width: 0; transform: translate3d(0,0,0);}
+  70% {width: 100%; transform: translate3d(0,0,0);}
+  100% {width: 100%;transform: translate3d(100%,0,0);}
+}
+
+@keyframes an-move-right {
+  0 {width: 0; transform: translate3d(0,0,0);}
+  70% {width: 100%; transform: translate3d(0,0,0);}
+  100% {width: 100%;transform: translate3d(100%,0,0);}
+}
+.an-move-right {
+	  -webkit-animation-name: an-move-right;
+	  animation-name: an-move-right;
+	  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes an-fade-in {
+  0%   {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-webkit-keyframes an-fade-in {
+  0%   {opacity: 0;}
+  100% {opacity: 1;}
+}
+.an-fade-in {
+	  // animation-name: an-fade-in;
+}
+
+
+@-webkit-keyframes an-fade-in-up {
+  0%   {opacity: 0; transform: translate3d(0,8%,0);}
+  100% {opacity: 1; transform: translate3d(0,0,0)}
+}
+
+@-webkit-keyframes an-fade-in-up {
+  0%   {opacity: 0; transform: translate3d(0,8%,0);}
+  100% {opacity: 1; transform: translateY(0,0,0)}
+}
+.an-fade-in-up {
+	  -webkit-animation-name: an-fade-in-up;
+	  animation-name: an-fade-in-up;
+	  animation-fill-mode: forwards;
+}
+
+
+@-webkit-keyframes an-block-right {
+  0%   	{width: 0;}
+  50%	{width: 100%; left: 0}
+  100% 	{width: 0; left: 100%;}
+}
+
+@-webkit-keyframes an-block-right {
+  0%   	{width: 0;}
+  50%	{width: 100%; left: 0}
+  100% 	{width: 0; left: 100%;}
+}
+.an-fade-out {
+	  animation-name: an-block-right ;
+	  animation-fill-mode: forwards;
+}
+
+
+@-webkit-keyframes an-be-height {
+  0%   	{height: 0;}
+  100% 	{height: 100%;}
+}
+
+@-webkit-keyframes an-be-height {
+  0%   	{height: 0;}
+  100% 	{height: 100%;}
+}
+.an-be-height {
+	  animation-name: an-be-height ;
+	  animation-fill-mode: forwards;
+}
+
+
+@-webkit-keyframes an-be-width {
+  0%   	{width: 0;}
+  100% 	{width: 100%;}
+}
+
+@-webkit-keyframes an-be-width {
+  0%   	{width: 0;}
+  100% 	{width: 100%;}
+}
+.an-be-width {
+	  animation-name: an-be-width ;
+	  animation-fill-mode: forwards;
+}
+
+
+@-webkit-keyframes an-be-max-width {
+  0%   	{max-width: 0;z-index: 2;}
+  100% 	{max-width: 100%;z-index: 2;}
+}
+
+@-webkit-keyframes an-be-max-width {
+  0%   	{max-width: 0;z-index: 2;}
+  100% 	{max-width: 100%;z-index: 2;}
+}
+.an-be-width {
+	  animation-name: an-be-max-width ;
+	  animation-fill-mode: forwards;
+}
+
+
+@-webkit-keyframes an-loading {
+
+}
+
+@-webkit-keyframes an-loading {
+	0%,100%  { transform: translate3d(-100%,0,0);}
+	25%,75%  { transform: translate3d(0,0,0);}
+	50%  { transform: translate3d(0,-100%,0);}
+	51%  { transform: translate3d(100%,-100%,0);}
+	52%  { transform: translate3d(100%,0,0);}
+	98% { transform: translate3d(0,100%,0);}
+	99% { transform: translate3d(-100%,100%,0);}
+}
+.an-loading {
+	  animation-name: an-loading ;
+	  animation-fill-mode: forwards;
+}
+.loading-page {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	right: 0;
+	background: #fff;
+	z-index: 12;
+	transition: cubic-bezier(.04,.435,.315,.9) .35s;
+	overflow: hidden;
+	.color-bg::before {
+		right: 0;
+		background: #fff;
+		z-index: 1;
+	}
+	.load-box {
+		position: absolute;
+		top: calc(50% - 50px);
+		right: calc(50vw - 50px);
+		width: 100px;
+		height: 100px;
+		overflow: hidden;
+		&::before {
+			left: 0;
+			width: 100%;
+			animation-delay: .5s;
+			animation-name: an-loading ;
+		  	animation-fill-mode: forwards;
+		  	animation-duration: 2.7s;
+		  	animation-iteration-count:1.5;
+		  	animation-timing-function: linear;
+		  	transform: translate3d(-100%,0,0);
+		}
+		img {
+			position: absolute;
+			width: 70%;
+			top: 50%;
+			left: 50%;
+			transform: translate3d(-50%,-50%,0);
+		}
+	}
+	animation-delay: 5.2s;
+	animation-name: an-be-width ;
+  	animation-fill-mode: forwards;
+  	animation-duration: .7s;
+  	animation-timing-function: cubic-bezier(.04,.435,.315,.9);
+  	animation-direction: reverse;
+}
