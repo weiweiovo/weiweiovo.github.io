@@ -2424,9 +2424,11 @@ footer {
       .product .product-list .list-box.list-content-box .list-content {
         padding: 2em 4%; }
         .product .product-list .list-box.list-content-box .list-content .list-title, .product .product-list .list-box.list-content-box .list-content .en-title {
-          -webkit-transform: scale(0.8);
-          -ms-transform: scale(0.8);
-          transform: scale(0.8); }
+          font-size: 7.5vw; }
+        .product .product-list .list-box.list-content-box .list-content:first-child .list-title, .product .product-list .list-box.list-content-box .list-content .en-title {
+          -webkit-transform: scale(0.9);
+          -ms-transform: scale(0.9);
+          transform: scale(0.9); }
         .product .product-list .list-box.list-content-box .list-content.less-text {
           padding: 2em 2.5em; }
         .product .product-list .list-box.list-content-box .list-content article {

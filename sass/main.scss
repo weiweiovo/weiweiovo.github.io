@@ -2094,7 +2094,8 @@ footer {
 			width: 90%; 
 			.list-box.list-content-box .list-content { 
 				padding: 2em 4%; 
-				.list-title, .en-title { transform: scale(.8); }
+				.list-title, .en-title { font-size: 7.5vw; }
+				&:first-child .list-title, .en-title { transform: scale(.9);}
 				&.less-text {
 					padding: 2em 2.5em;
 				}
