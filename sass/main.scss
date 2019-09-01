@@ -405,6 +405,7 @@ ul {
 			right: 0;
 			transition: ease .7s;
 			background: #fff;
+			transform: translateZ(0);
 		}
 		&::before { width: 100%; top: 16px;}
 		&::after { width: 70%; top: 30px; }

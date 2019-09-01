@@ -740,7 +740,9 @@ ul {
       -webkit-transition: ease .7s;
       -o-transition: ease .7s;
       transition: ease .7s;
-      background: #fff; }
+      background: #fff;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0); }
     .cs-item .cs-icon::before {
       width: 100%;
       top: 16px; }
