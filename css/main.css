@@ -845,13 +845,11 @@ ul {
         height: 1px;
         background: #fff; }
       .cs-item.is-open .cs-icon::before {
-        -webkit-transform: translateX(-50%) rotate(45deg);
-        -ms-transform: translateX(-50%) rotate(45deg);
-        transform: translateX(-50%) rotate(45deg); }
+        -webkit-transform: translate3d(-50%, 0, 0) rotate(45deg);
+        transform: translate3d(-50%, 0, 0) rotate(45deg); }
       .cs-item.is-open .cs-icon::after {
-        -webkit-transform: translateX(-50%) rotate(-45deg);
-        -ms-transform: translateX(-50%) rotate(-45deg);
-        transform: translateX(-50%) rotate(-45deg);
+        -webkit-transform: translate3d(-50%, 0, 0) rotate(-45deg);
+        transform: translate3d(-50%, 0, 0) rotate(-45deg);
         top: 37px; }
     .cs-item.is-open .cs-box {
       width: 100%;
@@ -2426,7 +2424,9 @@ footer {
       .product .product-list .list-box.list-content-box .list-content {
         padding: 2em 4%; }
         .product .product-list .list-box.list-content-box .list-content .list-title, .product .product-list .list-box.list-content-box .list-content .en-title {
-          font-size: 7.5vw; }
+          -webkit-transform: scale(0.8);
+          -ms-transform: scale(0.8);
+          transform: scale(0.8); }
         .product .product-list .list-box.list-content-box .list-content.less-text {
           padding: 2em 2.5em; }
         .product .product-list .list-box.list-content-box .list-content article {

@@ -514,8 +514,8 @@ ul {
 				height: 1px;
 				background: #fff;
 			}
-			&::before { transform: translateX(-50%) rotate(45deg); }
-			&::after { transform: translateX(-50%) rotate(-45deg); top: 37px; }
+			&::before { transform: translate3d(-50%,0,0) rotate(45deg); }
+			&::after { transform: translate3d(-50%,0,0) rotate(-45deg); top: 37px; }
 		}
 		.cs-box {
 			width: 100%;
@@ -2094,7 +2094,7 @@ footer {
 			width: 90%; 
 			.list-box.list-content-box .list-content { 
 				padding: 2em 4%; 
-				.list-title, .en-title { font-size: 7.5vw; }
+				.list-title, .en-title { transform: scale(.8); }
 				&.less-text {
 					padding: 2em 2.5em;
 				}
