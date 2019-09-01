@@ -372,11 +372,12 @@ ul {
 	text-align: right;
 	cursor: pointer;
 	background: #113487;
+	transform: translateZ(0);
 
 	transition-property: width, height;
-	transition-duration: .5s;
-	transition-timing-function: linear;
-	transition-delay: 0,.3s;
+	transition-duration: .35s;
+	transition-timing-function: ease-in-out;
+	transition-delay: 0,.15s;
 	.mask {
 		position: fixed;
 		top: 0;
@@ -2095,7 +2096,7 @@ footer {
 			.list-box.list-content-box .list-content { 
 				padding: 2em 4%; 
 				.list-title, .en-title { font-size: 7.5vw; }
-				&:first-child .list-title, .en-title { transform: scale(.9);}
+				&:first-child .list-title, .en-title { font-size: 6.5vw; padding-top: .5vw;}
 				&.less-text {
 					padding: 2em 2.5em;
 				}
