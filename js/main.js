@@ -434,7 +434,7 @@ $(window).resize(function(){
 	}
 	if($(window).innerWidth()<=768 && !evnSwiperShow) {
 		envSwiper = new Swiper ( ".enviroment-swiper-box", {
-		  	slidesPerView: 1.6,
+		  	slidesPerView: 3,
 		  	spaceBetween: 24,
 	      	centeredSlides: true,
 	      	loop: true,
