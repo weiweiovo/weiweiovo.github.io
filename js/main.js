@@ -438,7 +438,7 @@ $(window).resize(function(){
 		  	spaceBetween: 24,
 	      	centeredSlides: true,
 	      	loop: true,
-	      	loopedSlides: 3,
+// 	      	loopedSlides: 3,
 	      	speed:800,
 	      	autoplay: {
 	        	delay: 2500,
