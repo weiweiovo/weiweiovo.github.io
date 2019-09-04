@@ -1,0 +1,359 @@
+@font-face {
+	font-family:'LiHei ProPC';
+	font-style:normal;
+	font-weight: normal;
+	src:url("../font/LiHei ProPC.ttf") format("truetype");
+	/* (C) 2015 Apple Inc. All rights reserved.*/
+}
+
+@mixin pseudo-a($width:100%, $height:100%,) {
+  content: "";
+  position: absolute;
+  display: block;
+  width: $width;
+  height: $height;
+}
+
+.text-justify {
+	text-align: justify;
+	text-justify: auto;
+}
+.l-em-05 {
+	letter-spacing: -.05em;
+}
+.l-em25 {
+	letter-spacing: .25em;
+	@media screen and (max-width: 768px) {
+		letter-spacing: .1em;
+	}
+}
+.en {
+	p {
+		letter-spacing: 0 !important;
+		word-spacing: .15em;
+	}
+}
+header {
+	.cn {
+		.list-item.btn, .btn-lang {
+			opacity: .58;
+		}
+	}
+	.en {
+		.list-item.btn, .btn-lang {
+			opacity: .7;
+		}
+		.nav-list .list-item.lang-box .btn-lang {
+			left: -1.3em;
+		}
+	}
+}
+.en {
+	.cs-item .cs-box .cs-bottom .list-item.boar {
+		min-height: 95px;
+		&::after {
+			width: 80%;
+		}
+	}
+	.nav-list .list-item.btn span::after {
+		top: calc(100% + 3px);
+	}
+	.about {
+		.about-bg {
+			min-height: 835px;
+		}
+		.about-content .content {
+			@media screen and (max-width: 768px) { 
+				font-size: 3.4vw;
+				line-height: 1.5em;
+			}
+			@media screen and (max-width: 480px) { 
+				font-size: 4vw;
+			}
+		} 
+		@media screen and (max-width: 1200px) { 
+			.part {
+				display: block;
+				margin: 1.2em 0 0;
+			}
+		}
+	}
+	.product {
+		.list-content {
+			padding: 4em 8em;
+			article {
+				p, .main-content {
+					line-height: 30px;
+				}
+				.main-content {
+					margin-bottom: 1.2em;
+				}
+			}
+		}
+		.list-box {
+			.list-title {
+				font-size: 40px;
+				margin-bottom: .5em;
+			}
+		}
+		.title-box {
+			bottom: 3.5em;
+			text-align: center;
+			width: calc(50% - 20em);
+			max-width: 550px;
+			left: 8em;
+			@media screen and (max-width: 1025px) {
+				width: 90%;
+				left: calc(50% + 1em);
+				transform: translateX(-50%);
+			}
+			@media screen and (max-width: 768px) {
+				width: 62vw;
+				left: calc(50% + 2em);
+			}
+			.list-item {
+				font-size: 16px;
+				letter-spacing: 0;
+				padding: .5em 0;
+				&:nth-of-type(1) {
+					float: left;
+					text-align: left;
+				}
+				&:nth-of-type(3) {
+					float: right;
+				}
+				@media screen and (max-width: 1370px){
+					.list-item-title {
+						text-align: left;
+						line-height: 1.2em;
+						span {
+							display: block;
+						}
+					} 
+				}
+				@media screen and (max-width: 1025px) {
+					.list-item-title span { display: inline; }
+				}
+				@media screen and (max-width: 740px){
+					.list-item-title {
+						text-align: left;
+						font-size: 3vw;
+						line-height: 1.2em;
+						span {
+							display: block;
+						}
+					} 
+				}
+			}
+		}
+		.product-list .list-box.list-content-box .list-content article p {
+			@media screen and (max-width: 768px) { 
+				font-size: 3.5vw; line-height: 5.5vw;
+				&.main-content {
+					font-size: 4vw;
+				}
+			}
+			@media screen and (max-width: 480px) { 
+				&.main-content {
+					font-size: 4.5vw;
+				}
+				font-size: 4vw; line-height: 6.5vw;
+			}
+		} 
+		
+	}
+	.join-us {
+		.section-title:not(.about-section-title) {
+		    margin: .5em auto .3em;
+		}
+		.summary {
+			font-size: 22px;
+			line-height: 1.5em;
+			margin: .5em auto 1.5em;
+			@media screen and (max-width: 768px) {
+				font-size: 3.5vw;
+				line-height: 1.35em;
+			}
+			article {
+				@media screen and (max-width: 768px) {
+					padding: 1.5em 1em;
+				}
+			}
+		}
+		.main-content .info {
+			@media screen and (max-width: 1025px) {
+				min-height: unset;
+			}
+		}
+		.form {
+			.form-text {
+				width: 95%;
+				margin: 7% auto 1.2em;
+				font-size: 20px;
+				@media screen and (max-width: 480px) {
+					margin: 1em auto 2em;
+					font-size: 4.5vw;
+				}
+			}
+		}
+	}
+	footer .list-item.btn, footer .nav-list .list-item .btn-lang {
+		opacity: 1;
+	}
+}
+.cn {
+	font-family: 'Microsoft JhengHei';
+	.nav-list .list-item.btn span::after{
+		top: calc(100% + 5px);
+	}
+	.about {
+		.about-bg {
+			min-height: 810px;
+		}
+		.about-content {
+			padding: 3em;
+			@media screen and (max-width: 900px) {
+				padding: 2em 2.5em;
+				.part {
+					margin-bottom: 1em;
+				}
+			}
+			.content {
+				letter-spacing: .25em;
+				.part {
+					display: block;
+				}
+			}	
+		}
+		
+	}
+	.service .list-box .list-item .list-title.focus {
+		margin-bottom: .4em;
+	}
+	.product {
+		.list-content {
+			padding: 6em 8em;
+			article {
+				p, .main-content {
+					line-height: 32px;
+				}
+				.main-content {
+					margin-bottom: 1.3em;
+				}
+			}
+		}
+		.list-box {
+			.list-title {
+				font-size: 50px;
+				margin-bottom: .15em;
+				@media screen and (max-width: 1025px) {
+					margin-bottom: .5em;
+				}
+			}
+		}
+		.title-box {
+			bottom: 4.5em;
+			width: calc(50% - 8em);
+			max-width: 45%;
+			text-align: left;
+			left: 8em;
+			@media screen and (max-width: 1025px) {
+				width: 75%;
+				max-width: unset;
+				left: calc(50% + 4em);
+				transform: translateX(-50%);
+			}
+			@media screen and (max-width: 760px) {
+				left: calc(50% + 2em);
+			}
+			.list-item {
+				width:  20%;
+				margin: 0 10% 0 0;
+				@media screen and (max-width: 1370px){
+					margin: 0 10% 0 0;
+					.list-item-title {
+						text-align: left;
+						line-height: 1.2em;
+						span {
+							display: block;
+						}
+					} 
+				}
+				@media screen and (max-width: 1025px) {
+					.list-item-title span { display: inline; }
+				}
+				@media screen and (max-width: 740px){
+					.list-item-title {
+						text-align: left;
+						font-size: 3vw;
+						line-height: 1.2em;
+						span {
+							display: block;
+						}
+					} 
+				}
+			}
+		}
+	}
+	.join-us {
+		.section-title:not(.about-section-title) {
+		    margin: .5em auto 0;
+		}
+		.summary {
+			font-size: 20px;
+			line-height: 2em;
+			letter-spacing: .1em;
+			@media screen and (max-width: 768px) {
+				font-size: 3.5vw;
+			}
+		}
+		.main-content .info {
+			@media screen and (max-width: 1025px) {
+				min-height: unset;
+			}
+		}
+		.form {
+			.form-text {
+				width: 95%;
+				margin: 1.5em auto 1.2em;
+				font-size: 20px;
+				@media screen and (max-width: 480px) {
+					margin: 1em auto 2em;
+					font-size: 4.5vw;
+				}
+			}
+		}
+	}
+}
+
+.cs-item {
+	&.cs-item-cn {
+		&.is-open {
+			width: 165px;
+			&::before {
+				@media screen and (max-width: 768px) {
+					width: 165px;
+				}
+			}
+		}
+		.cs-box .nav-list {
+			width: 165px;
+		}
+	}
+	&.cs-item-en {
+		&.is-open {
+			width: 200px;
+			&::before {
+				@media screen and (max-width: 768px) {
+					width: 200px;
+				}
+			}
+		}
+		.cs-box .nav-list {
+			width: 200px;
+		}
+
+	}
+}
+
+		
