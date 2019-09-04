@@ -348,7 +348,6 @@ $(document).ready(function(){
 			let btn = $(this);
 			if(btn.siblings().hasClass('is-hover')) {
 				btn.siblings().removeClass('is-hover');
-				console.log('ww');
 				setTimeout(function(){
 					console.log(btn);
 					btn.addClass('is-hover');
@@ -402,7 +401,7 @@ $(window).resize(function(){
 		envSwiper = new Swiper ( ".enviroment-swiper-box", {
 		  	slidesPerView: 1,
 	      	centeredSlides: true,
-	      	// loop: true,
+	      	loop:true,
 	      	speed:800,
 	      	autoplay: {
 	        	delay: 2500,
