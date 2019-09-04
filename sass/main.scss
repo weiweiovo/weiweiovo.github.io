@@ -569,6 +569,7 @@ header, .header-bg {
 		height: 100%;
 		background-position: center 88%;
 		opacity: .75;
+		transition: unset;
 	}
 	.nav-list {
 		width: calc(100% - 300px);

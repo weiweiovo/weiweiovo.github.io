@@ -920,7 +920,10 @@ header, .header-bg {
     max-width: 265px;
     height: 100%;
     background-position: center 88%;
-    opacity: .75; }
+    opacity: .75;
+    -webkit-transition: unset;
+    -o-transition: unset;
+    transition: unset; }
   .header .nav-list {
     width: calc(100% - 300px);
     text-align: right; }
