@@ -254,6 +254,7 @@
                                 }
                             }
                             var tItem = settings.autoWidth === true ? tI : settings.item;
+                            tItem = 3;
 
                             /**/
                             if (tItem < $el.find('.clone.left').length) {
@@ -442,7 +443,10 @@
                     }
                     ob.css({
                         'height': tH+100 + 'px',
-                        // 'padding-bottom': tP + '%'
+                    });
+                    let maxtH = (tH+100)*0.7;
+                    ob.parents('.lSSlideOuter ').css({
+                        'max-height': maxtH + 'px',
                     });
                 };
                 setCss();
