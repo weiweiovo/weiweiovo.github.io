@@ -2223,6 +2223,7 @@ footer {
     border-bottom: 1px solid #d8d8d8; }
   header.white-head .logo {
     background-image: url(../images/boar_logo_black.svg);
+    background-size: 100%;
     opacity: 1; }
   .header .wrap {
     padding: 6px 12px;
