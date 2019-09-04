@@ -373,7 +373,6 @@ ul {
 	cursor: pointer;
 	background: #113487;
 	transform: translateZ(0);
-
 	transition-property: width, height;
 	transition-duration: .35s;
 	transition-timing-function: ease-in-out;
@@ -381,7 +380,7 @@ ul {
 	.mask {
 		position: fixed;
 		top: 0;
-		left: 0;
+		right: 0;
 		width: 0;
 		height: 100%;
 	}
@@ -456,7 +455,7 @@ ul {
 		}
 		.cs-top {
 			height: 60%;
-
+			min-height: 300px;
 			padding: 20px 0 0;
 			margin-bottom: 5%;
 			.list-item {
@@ -467,6 +466,8 @@ ul {
 		.cs-bottom {
 			position: relative;
 			height: 38%;
+			min-height: 150px;
+			padding-bottom: 40px;
 			.list-item {
 				&.boar{
 					cursor: pointer;
@@ -505,9 +506,9 @@ ul {
 		height: 100vh;
 		transition-delay: .3s,0;
 		.mask {
-			width: 100%;
+			width: 100vw;
 		}
-		.icon-box { height: 20vh; }
+		.icon-box { height: 20vh; min-height: 80px;}
 		.cs-icon {
 			right: calc(50% - 30px);
 			&::before,&::after {
@@ -1284,8 +1285,15 @@ header:not(.white-head) .header-bg {
 			height: 100%;
 		}
 		.list-item {
-			width: calc(50vw*.92);
-			max-width: 0;
+			@media screen and (max-width: 1025px) {
+				width: 90vw;
+			}
+			@media screen and (min-width: 1025px) {
+				width: calc(50vw*.92);
+			}
+			@media screen and (min-width: 1024px) {
+				max-width: 0;
+			}
 			transition: linear .6s;
 			overflow: hidden;
 			.vision {
@@ -1299,6 +1307,7 @@ header:not(.white-head) .header-bg {
 				max-width: 100%;
 			}
 			&.is-open {
+				z-index: 2;
 				max-width: 100%;
 				transition: unset;
 				.vision {
@@ -1420,14 +1429,14 @@ header:not(.white-head) .header-bg {
 }
 .environment {
 	min-height: 720px;
-	.section-title { margin: 1em auto 0;  }
+	width: 100%;
 	.environment-bg { position: relative; }
 	.environment-bg::after {
 		content: "";
 		position: absolute;
 		display: block;
 		width: 100%;
-		height: 105%;
+		height: 110%;
 		top: 0;
 		left: 0;
 		background: url(../images/earth-bg.jpg) 0% top no-repeat;
@@ -1483,19 +1492,21 @@ header:not(.white-head) .header-bg {
 	}
 	.enviroment-swiper-box {
 		display: none;
-		
+		width: 70%; 
+		margin: 0 auto; 
+		overflow: unset;
 		.list-box {
 			width: 100%;
 			.list-item {
 				transition: .8s;
 				.vision {
-					width: 95%;
+					width: 88%;
 					height: unset;
 					opacity: .5;
 					transition: ease .8s; 
 					img { transition: linear .8s;}
 				}
-				p { width: 95%; }
+				p { width: 88%; }
 				&:nth-of-type(odd) {
 					transform: translateY(0);
 				}
@@ -1503,11 +1514,22 @@ header:not(.white-head) .header-bg {
 					transform: translateY(0) scale(1.1);
 					.vision { opacity: 1}
 				} 
+				&:last-child {
+					&::before {
+						position: absolute;
+						content: "";
+						width: 100%;
+						height: 90%;
+						background: url(../images/env02.jpg);
+						background-size: 100%;
+						left: 96%;
+						top: 0;
+						opacity: .75;
+						transform: scale(.9);
+					}
+				}
 			}
 		}
-		
-		width: 100%;
-
 	}
 	&.animated {
 		.list-box p{
@@ -1532,9 +1554,6 @@ header:not(.white-head) .header-bg {
 .join-us {
 	max-height: unset;
 	font-size: 0;
-	.section-title {
-		margin-bottom: 0;
-	}
 	.summary {
 		opacity: 0;
 		margin: 2em auto;
@@ -1580,7 +1599,7 @@ header:not(.white-head) .header-bg {
 	.message-box {
 		float: right;
 		min-width: 620px;
-		min-height: 500px;
+		min-height: 510px;
 		padding: 3em 4em;
 		font-size: 16px;
 		color: #fff;
@@ -1842,7 +1861,7 @@ footer {
 			position: fixed;
 			top:0;
 			right: 0;
-			width: 22%;
+			width: 22vw;
 			max-width: 80px;
 			height: 50px;
 			background: #113487;
@@ -1862,7 +1881,6 @@ footer {
 		.cs-box {
 		}
 		&.is-open {
-			overflow: auto;
 			&::before {
 				width: 100%;
 				max-width: 200px;
@@ -1878,7 +1896,6 @@ footer {
 				}
 			}
 			.cs-box {
-				min-height: 300px;
 				.cs-bottom .list-item.boar {
 					height: 13vh;
 					max-height: unset;
@@ -1947,7 +1964,6 @@ footer {
 				height: 60vw;
 				margin: 0 auto;
 				.list-item {
-					width: 90vw;
 					.vision {
 						background-size: 90vw auto;
 					}

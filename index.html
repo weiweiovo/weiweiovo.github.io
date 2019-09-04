@@ -11,14 +11,12 @@
 	<link rel="alternate" href="/en/" hreflang="EN">
 	<link rel="alternate" href="/tw/" hreflang="TW">
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300|Marvel|Nunito+Sans:200,300|Open+Sans:300|Scheherazade&display=swap" rel="stylesheet">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
  
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
+	<script src="js/swiper4.0.2.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 
 </head>
@@ -156,15 +154,15 @@
 
 	 			<div class="product-list swiper-container color-bg">
 	    			<ul class="list-box vision-box color-bg">
-				 		<li class="list-item is-show">
+				 		<li class="list-item is-show" data-num="1">
 				 			<div class="vision" style="background-image: url(images/product01.jpg);">
 				 			</div>
 				 		</li>
-				 		<li class="list-item">
+				 		<li class="list-item" data-num="2">
 					 		<div class="vision" style="background-image: url(images/product02.jpg);">
 					 		</div>
 					 	</li>
-					 	<li class="list-item">
+					 	<li class="list-item" data-num="3">
 					 		<div class="vision" style="background-image: url(images/product03.jpg);">
 					 		</div>
 					 	</li>
@@ -272,7 +270,7 @@
 					<div class="info message-box">
 						<p class="title fn-Josefin color-bg">SEND ME A MESSAGE</p>
 						<!-- <p class="remind">表單輸入不完全</p> -->
-						<div class="form">
+						<div class="form" id="mail-box">
 							<div class="form-box">
 								<div class="form-item">
 									<input id="messageName" type="text" name="name" placeholder="Name"autocomplete="off" required>
@@ -296,9 +294,9 @@
 							</div>
 							<article class="form-text">
 								<p>We has received your message.</p>
-								<span class="abreast-m">We will contact you as soon</span><span class="abreast-m">as possible,</span>
-								<span class="abreast-m">thank you</span><span class="abreast-m">for your patience.</span>
-								<p class="focus">If you want to know more about the job of the boar tech,<br>please visit the link below to view.</p>
+								<span class="abreast-m">We will contact you as soon </span><span class="abreast-m">as possible,</span>
+								<span class="abreast-m">thank you </span><span class="abreast-m">for your patience.</span>
+								<p class="focus">If you want to know more about the job of the boar tech, <br>please visit the link below to view.</p>
 							</article>
 						</div>
 						<ul class="btn-box">
@@ -320,7 +318,7 @@
 	<footer>
 		<div class="wrap">
 			<div class="logo-box abreast-t">
-				<div class="logo"> <img src="images/boar_logo.svg"> </div>
+				<div class="logo is-hover"> <img src="images/boar_logo.svg"> </div>
 				<p>© 2019   The Boar Tech  co.,ltd.</p>
 			</div>
 			<ul class="nav-list abreast-t">
@@ -392,11 +390,8 @@
 	})
 
 	var envSwiper = new Swiper ( ".enviroment-swiper-box", {
-	  	slidesPerView: 1.6,
-	  	spaceBetween: 24,
+	  	slidesPerView: 1,
       	centeredSlides: true,
-      	loop: true,
-      	loopedSlides: 3,
       	speed:800,
       	autoplay: {
         	delay: 2500,

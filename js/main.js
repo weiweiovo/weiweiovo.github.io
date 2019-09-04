@@ -17,58 +17,9 @@ function isMobile() {
   catch(e){ return false;}
 
 }
-//cookie設定
-
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-} 
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-         }
-         if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-         }
-     }
-    return "";
-} 
-function getCookieValueByIndex(startIndex) {
-  var endIndex = document.cookie.indexOf(";", startIndex);
-  if (endIndex == -1) endIndex = document.cookie.length;
-  return unescape(document.cookie.substring(startIndex, endIndex));
-}
 
 
-function cookie(name) {  
-    //================  
-    var s = getCookie(name); 
-    console.log(s); 
-    if (s.indexOf('visited')  == -1) {
-    	console.log('33');
-    	$('#loading').remove();
-		$("html, body").css('overflow','unset');
-		if(!$('.main-vision .vision-title').hasClass('animated')) {
-			$('.main-vision .vision-title').addClass('animated');
-			$('.main-vision').addClass('animated');
-			setTimeout(function(){
-				VisionSwiper.init(true);
-				setTimeout(function(){
-					$('.main-vision .vision-list .swiper-slide').removeClass('show');
-				},100) 
-			},2750)
-		}
-		getSectionTop();
-    	return; //存在cookie退出下面代码的执行  
-    }
+function cookie() {  
     setTimeout(function(){
 		$('#loading').remove();
 			$("html, body").css('overflow','unset');
@@ -84,6 +35,7 @@ function cookie(name) {
 			}
 			getSectionTop();
 			addAnimate(window.pageYOffset);
+			// setCookie('visited',true,30);
 	},6500);
 }  
 
@@ -94,8 +46,8 @@ function goBlock(blockNum,needWait) {
 	let scrollTop = window.pageYOffset;
 	let distance = parseInt(scrollTop - page[blockNum].top);
 	if(distance < 0) {distance = distance*-1}
-	let time = distance/$(window).innerHeight()*300;
-	if($(window).innerWidth()<=768) {  time = distance/$(window).innerHeight()*500;}
+	let time = distance/$(window).innerHeight()*500;
+	if($(window).innerWidth()<=768) {  time = distance/$(window).innerHeight()*300;}
 	if(needWait) {
 		setTimeout(function(){
 			$("html, body").stop().animate({ 
@@ -196,19 +148,16 @@ var onChange = false;
 var protimer =setInterval("clock(timer)",10000);
 var timer = 1;
 var proStop = true;
-var productOpen = 1;
 function clock(num) {
 	if(proStop) { return }
   	if(num<4) {
     		$("#pro-btn"+num).click();
     		timer++;
-    		productOpen = num;
 	}
 	else {
 		timer = 1
 		$("#pro-btn1").click();
 		timer++;
-		productOpen = 1;
 	}
 
 }
@@ -228,7 +177,6 @@ function productChange(path) {
 	}
 	onChange = false;
 	proStop = false;
-	console.log(num);
 	$("#pro-btn"+num).click();
 
 }
@@ -237,6 +185,7 @@ var sendText = {
 	cn:{
 		errorname:'請輸入姓名',
 		erroremail:'請輸入電子郵件',
+		erroremailType:'電子郵件格式錯誤',
 		errortitle:'請輸入主旨',
 		errormessage:'請輸入訊息',
 		sendout:'已送出',
@@ -245,11 +194,31 @@ var sendText = {
 	en:{
 		errorname:'Please enter the Name',
 		erroremail:'Please enter an Email',
+		erroremailType:'Invalid Email',
 		errortitle:'Please enter the Subject',
 		errormessage:'Please enter the Message',
 		sendout:'Send Out',
 		send:'Submit'
 	}
+}
+
+function validateEmail(email) {
+  let reg = /^[^\s]+@[^\s]+\.[^\s]{2,3}$/;
+  if (reg.test(email)) {
+      return true;
+  }else{
+      return false;
+  }
+}
+function hasErrormessage(lang) {
+	if($('.error-text').text() == "") {
+		let send,sendout;
+        lang == 'en' ? sendout = sendText.en.sendout : sendout = sendText.cn.sendout;
+        $('.btn-send .send-text').text(sendout);
+		$('.btn-send').attr('disabled', true);
+        submitHandler(lang);
+	}
+	return
 }
 function checkform(lang) {
 	$('.error-text').text(""); 
@@ -259,10 +228,15 @@ function checkform(lang) {
     	lang == 'en' ? errorname = sendText.en.errorname : errorname = sendText.cn.errorname;
         $("#messageName").next('.error-text').text(errorname);  
     }
-    if($("#messageEmail").val()==""){
+    if($("#messageEmail").val()=="") {
     	let erroremail;
     	lang == 'en' ? erroremail = sendText.en.erroremail : erroremail = sendText.cn.erroremail;
-       $("#messageEmail").next('.error-text').text(erroremail);  
+       	$("#messageEmail").next('.error-text').text(erroremail);  
+    }
+    if($("#messageEmail").val()!="" && !validateEmail($("#messageEmail").val())) {
+    	let erroremail;
+    	lang == 'en' ? erroremail = sendText.en.erroremailType : erroremail = sendText.cn.erroremailType;
+       	$("#messageEmail").next('.error-text').text(erroremail);  
     }
     if($("#messageTitle").val()==""){
     	let errortitle;
@@ -274,18 +248,8 @@ function checkform(lang) {
     	lang == 'en' ? errormessage = sendText.en.errormessage : errormessage = sendText.cn.errormessage;
         $("#messageText").next('.error-text').text(errormessage);  
     }
-    else{
-        let send,sendout;
-        lang == 'en' ? send = sendText.en.send : send = sendText.cn.send;
-        lang == 'en' ? sendout = sendText.en.sendout : sendout = sendText.cn.sendout;
-        $('.btn-send .send-text').text(sendout);
-        submitHandler();
-        // $('#send').click();
-        $('.form-item input, .form-item textarea').val('');
-		setTimeout(function(){
-			$('.btn-send .send-text').text(send);
-		},1500);
-    }
+    hasErrormessage(lang);
+
 }
 
 function changeText(){
@@ -307,10 +271,8 @@ function submitHandler(){
 	    body += "From："+name+'%0A';
 	    body += "Email："+email+'%0A';
 	    body += "Tel："+messageTel.value;
-	//傳送的主要程式碼
-    // mailTo.href="mailto:"+to+"?subject="+subject+"&body="+body;
     changeText();
-    // mailTo.click();
+    document.mailbox.submit();
 }
 //在body onload
 function init(){
@@ -333,7 +295,6 @@ $(document).ready(function(){
 		$('.product .product-list .list-content-box').css('height',getProductHeight());
 	}
 	cookie();
-	setCookie('visited','true',1);
 
 	$('.cs-item .btn-cs').click(function() {
 		if($('.cs-item').hasClass('is-open')) {
@@ -353,13 +314,18 @@ $(document).ready(function(){
 	  		return;
 	  	} else {
 	  		proStop = true;
-	  		$(".product .product-list .vision-box .list-item.is-open").css('z-index','2');
+	  		if($(window).innerWidth() > 1024) {
+				$(".product .product-list .vision-box .list-item.is-open").css('z-index','2');
+			}
 	  		$(".product-list .title-box .list-item").removeClass('is-open');
 	  		$(this).addClass('is-open');
 	  		$(".product-list .list-box .list-item").removeClass('is-open');
 	  			$(".product-list .list-box .list-item:nth-of-type("+blockNum+")").addClass('is-open');
 	  			setTimeout(function(){
-	  				$(".product .product-list .vision-box .list-item").css('z-index','unset');
+	  				if($(window).innerWidth() > 1024) {
+						$(".product .product-list .vision-box .list-item").css('z-index','unset');
+					}
+	  				
 	  				timer = blockNum;
 	  				proStop = false;
 	  				onChange = false;
@@ -434,11 +400,9 @@ $(window).resize(function(){
 	}
 	if($(window).innerWidth()<=768 && !evnSwiperShow) {
 		envSwiper = new Swiper ( ".enviroment-swiper-box", {
-		  	slidesPerView: 1.6,
-		  	spaceBetween: 24,
+		  	slidesPerView: 1,
 	      	centeredSlides: true,
-	      	loop: true,
-	      	loopedSlides: 3,
+	      	// loop: true,
 	      	speed:800,
 	      	autoplay: {
 	        	delay: 2500,
