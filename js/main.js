@@ -19,7 +19,8 @@ function isMobile() {
 }
 
 
-function cookie() {  
+function cookie() {
+$('#loading').remove();  
     setTimeout(function(){
 		$('#loading').remove();
 			$("html, body").css('overflow','unset');
@@ -120,13 +121,13 @@ function addAnimate(scrollTop) {
 				},3000);
 			}
 			if(i==4) {
-				envSwiper.autoplay.stop();
-				setTimeout(function(){
-					if($(window).innerWidth()<=768) {
-						envSwiper.autoplay.start(true);
-						evnSwiperShow = true;
-					}
-				},2500);
+				// envSwiper.autoplay.stop();
+				// setTimeout(function(){
+				// 	if($(window).innerWidth()<=768) {
+				// 		envSwiper.autoplay.start(true);
+				// 		evnSwiperShow = true;
+				// 	}
+				// },2500);
 			}
 		}
 	}
@@ -394,29 +395,29 @@ $(window).resize(function(){
 		$('.product .product-list .vision-box .list-item .vision').css('transition','linear 20s');
 		onChangeSize = false;
 	},350)
-	if($(window).innerWidth()>768 && evnSwiperShow) {
-		evnSwiperShow = false;
-	}
-	if($(window).innerWidth()<=768 && !evnSwiperShow) {
-		envSwiper = new Swiper ( ".enviroment-swiper-box", {
-		  	slidesPerView: 1,
-	      	centeredSlides: true,
-	      	loop:true,
-	      	speed:800,
-	      	autoplay: {
-	        	delay: 2500,
-	        	disableOnInteraction: false,
-	      	},
-		})
-		envSwiper.autoplay.stop();
-		evnSwiperShow = true;
-		setTimeout(function(){
-			if($(window).innerWidth()<=768) {
-				envSwiper.autoplay.start(true);
-				evnSwiperShow = true;
-			}
-		},2500);
-	}
+	// if($(window).innerWidth()>768 && evnSwiperShow) {
+	// 	evnSwiperShow = false;
+	// }
+	// if($(window).innerWidth()<=768 && !evnSwiperShow) {
+	// 	envSwiper = new Swiper ( ".enviroment-swiper-box", {
+	// 	  	slidesPerView: 1,
+	//       	centeredSlides: true,
+	//       	loop:true,
+	//       	speed:800,
+	//       	autoplay: {
+	//         	delay: 2500,
+	//         	disableOnInteraction: false,
+	//       	},
+	// 	})
+	// 	envSwiper.autoplay.stop();
+	// 	evnSwiperShow = true;
+	// 	setTimeout(function(){
+	// 		if($(window).innerWidth()<=768) {
+	// 			envSwiper.autoplay.start(true);
+	// 			evnSwiperShow = true;
+	// 		}
+	// 	},2500);
+	// }
 })
 
 

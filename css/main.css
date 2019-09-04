@@ -1786,9 +1786,6 @@ header:not(.white-head) .header-bg {
     background-size: auto 100%;
     z-index: -1; }
   .environment .list-box {
-    width: 88%;
-    max-width: 1700px;
-    padding: 4% 0 12%;
     margin: 0 auto; }
     .environment .list-box .list-item {
       display: inline-block;
@@ -1826,13 +1823,25 @@ header:not(.white-head) .header-bg {
         -webkit-transform: scale(1.05);
         -ms-transform: scale(1.05);
         transform: scale(1.05); }
+  .environment .enviroment-box .list-box {
+    width: 88%;
+    max-width: 1700px;
+    padding: 4% 0 12%; }
   .environment .enviroment-swiper-box {
     display: none;
-    width: 70%;
+    width: 100%;
     margin: 0 auto;
     overflow: unset; }
+    .environment .enviroment-swiper-box .lSSlideWrapper {
+      overflow: unset;
+      -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+      transform: scale(0.8); }
+    .environment .enviroment-swiper-box .lSGallery, .environment .enviroment-swiper-box .lSAction {
+      display: none; }
     .environment .enviroment-swiper-box .list-box {
-      width: 100%; }
+      width: 100%;
+      padding: 4% 0 12%; }
       .environment .enviroment-swiper-box .list-box .list-item {
         -webkit-transition: .8s;
         -o-transition: .8s;
@@ -1854,25 +1863,16 @@ header:not(.white-head) .header-bg {
           -webkit-transform: translateY(0);
           -ms-transform: translateY(0);
           transform: translateY(0); }
-        .environment .enviroment-swiper-box .list-box .list-item.swiper-slide-active {
+        .environment .enviroment-swiper-box .list-box .list-item.first {
+          -webkit-transition: unset;
+          -o-transition: unset;
+          transition: unset; }
+        .environment .enviroment-swiper-box .list-box .list-item.active {
           -webkit-transform: translateY(0) scale(1.1);
           -ms-transform: translateY(0) scale(1.1);
           transform: translateY(0) scale(1.1); }
-          .environment .enviroment-swiper-box .list-box .list-item.swiper-slide-active .vision {
+          .environment .enviroment-swiper-box .list-box .list-item.active .vision {
             opacity: 1; }
-        .environment .enviroment-swiper-box .list-box .list-item:last-child::before {
-          position: absolute;
-          content: "";
-          width: 100%;
-          height: 90%;
-          background: url(../images/env02.jpg);
-          background-size: 100%;
-          left: 96%;
-          top: 0;
-          opacity: .75;
-          -webkit-transform: scale(0.9);
-          -ms-transform: scale(0.9);
-          transform: scale(0.9); }
   .environment.animated .list-box p {
     -webkit-animation: an-fade-in-up 1s;
     animation: an-fade-in-up 1s;
