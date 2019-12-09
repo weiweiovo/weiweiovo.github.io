@@ -1,0 +1,20 @@
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Heiti SC", STXihei, "Microsoft YaHei", SimHei, "WenQuanYi Micro Hei";
+  background: #fff; }
+
+section {
+  position: relative;
+  z-index: 0;
+  text-align: center; }
+
+ul {
+  font-size: 0;
+  letter-spacing: 0; }
+
+.wrap {
+  width: 1200px;
+  margin: 0 auto; }
