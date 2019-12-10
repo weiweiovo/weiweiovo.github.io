@@ -20,8 +20,7 @@ function isMobile() {
 
 
 function cookie() {
-$('#loading').remove();  
-    setTimeout(function(){
+    // setTimeout(function(){
 		$('#loading').remove();
 			$("html, body").css('overflow','unset');
 			if(!$('.main-vision .vision-title').hasClass('animated')) {
@@ -37,7 +36,7 @@ $('#loading').remove();
 			getSectionTop();
 			addAnimate(window.pageYOffset);
 			// setCookie('visited',true,30);
-	},6500);
+	// },6500);
 }  
 
 // 滑動設定

@@ -4,12 +4,13 @@
 
 body {
   font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "Heiti SC", STXihei, SimHei, "WenQuanYi Micro Hei"; }
+}
+
 
 section {
   position: relative;
   z-index: 0;
   text-align: center; }
-
 .main-container {
   position: relative;
   width: 100%;
@@ -33,6 +34,7 @@ section {
   font-size: 38px;
   font-weight: bold;
   margin-bottom: 20px; }
+
 
 .wrap {
   width: 1200px;

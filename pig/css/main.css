@@ -133,7 +133,7 @@ header .en .nav-list .list-item.lang-box .btn-lang {
       line-height: 1.35em; } }
   @media screen and (max-width: 768px) {
     .en .join-us .summary article {
-      padding: 1em; } }
+      padding: 1.5em 1em; } }
 
 @media screen and (max-width: 1025px) {
   .en .join-us .main-content .info {
@@ -194,7 +194,7 @@ header .en .nav-list .list-item.lang-box .btn-lang {
   left: 8em; }
   @media screen and (max-width: 1025px) {
     .cn .product .title-box {
-      width: 90%;
+      width: 75%;
       max-width: unset;
       left: calc(50% + 4em);
       -webkit-transform: translateX(-50%);
@@ -202,7 +202,7 @@ header .en .nav-list .list-item.lang-box .btn-lang {
       transform: translateX(-50%); } }
   @media screen and (max-width: 760px) {
     .cn .product .title-box {
-      left: calc(50% + 3em); } }
+      left: calc(50% + 2em); } }
   .cn .product .title-box .list-item {
     width: 20%;
     margin: 0 10% 0 0; }
@@ -766,7 +766,7 @@ ul {
       top: 30px; }
   .cs-item .icon-box {
     width: 100%;
-    height: 20vh;
+    height: 16vh;
     max-height: 100%; }
   .cs-item .cs-box {
     position: relative;
@@ -804,7 +804,7 @@ ul {
       overflow: auto; }
     .cs-item .cs-box .cs-top {
       height: 60%;
-      min-height: 300px;
+      min-height: 250px;
       padding: 20px 0 0;
       margin-bottom: 5%; }
       .cs-item .cs-box .cs-top .list-item {
@@ -855,7 +855,7 @@ ul {
     .cs-item.is-open .mask {
       width: 100vw; }
     .cs-item.is-open .icon-box {
-      height: 20vh;
+      height: 16vh;
       min-height: 80px; }
     .cs-item.is-open .cs-icon {
       right: calc(50% - 30px); }
@@ -920,7 +920,10 @@ header, .header-bg {
     max-width: 265px;
     height: 100%;
     background-position: center 88%;
-    opacity: .75; }
+    opacity: .75;
+    -webkit-transition: unset;
+    -o-transition: unset;
+    transition: unset; }
   .header .nav-list {
     width: calc(100% - 300px);
     text-align: right; }
@@ -1649,7 +1652,8 @@ header:not(.white-head) .header-bg {
       background-position: center bottom;
       background-repeat: no-repeat; }
     .product .vision-box .list-item.is-show {
-      max-width: 100%; }
+      max-width: 100%;
+      z-index: 1; }
     .product .vision-box .list-item.is-open {
       z-index: 2;
       max-width: 100%;
@@ -1834,9 +1838,23 @@ header:not(.white-head) .header-bg {
     overflow: unset; }
     .environment .enviroment-swiper-box .lSSlideWrapper {
       overflow: unset;
-      -webkit-transform: scale(0.8);
-      -ms-transform: scale(0.8);
-      transform: scale(0.8); }
+      -webkit-transform: scale(0.65) translateY(-15%);
+      -ms-transform: scale(0.65) translateY(-15%);
+      transform: scale(0.65) translateY(-15%); }
+      .environment .enviroment-swiper-box .lSSlideWrapper::before {
+        position: absolute;
+        content: "";
+        width: 97vw;
+        height: 96vw;
+        background: url(../images/env01.jpg);
+        background-size: 100%;
+        background-position: bottom left;
+        top: 0;
+        left: 1.5vw;
+        visibility: hidden;
+        z-index: 2; }
+      .environment .enviroment-swiper-box .lSSlideWrapper.is-show::before {
+        visibility: unset; }
     .environment .enviroment-swiper-box .lSGallery, .environment .enviroment-swiper-box .lSAction {
       display: none; }
     .environment .enviroment-swiper-box .list-box {
@@ -2208,6 +2226,7 @@ footer {
     border-bottom: 1px solid #d8d8d8; }
   header.white-head .logo {
     background-image: url(../images/boar_logo_black.svg);
+    background-size: 100%;
     opacity: 1; }
   .header .wrap {
     padding: 6px 12px;
@@ -2264,16 +2283,14 @@ footer {
       -o-transition-property: height, width;
       transition-property: height, width; }
     .cs-item.is-open .icon-box {
-      height: 20vh; }
+      height: 16vh; }
       .cs-item.is-open .icon-box .cs-icon {
         right: calc(50% - 30px);
-        top: 10vh; }
+        top: 6vh; }
     .cs-item.is-open .cs-box .cs-bottom .list-item.boar {
       height: 13vh;
+      min-height: 80px;
       max-height: unset; }
-    .cs-item.is-open .cs-box .cs-bottom {
-      position: absolute;
-      bottom: 0; }
     .cs-item .cs-box .cs-box-info {
       min-height: unset; }
     .cs-item .cs-icon::before, .cs-item .cs-icon::after {
@@ -2420,24 +2437,28 @@ footer {
         text-align: center; } }
 
 @media screen and (max-width: 768px) {
-  .environment .enviroment-box {
-    display: none; }
-  .environment .enviroment-swiper-box {
-    display: block;
-    opacity: 1; }
-  .environment .list-box {
-    padding: 5vh 0; }
-    .environment .list-box .list-item p {
-      font-size: 4vw; }
-  .environment.animated .enviroment-swiper-box {
-    -webkit-animation: an-fade-in .1s;
-    animation: an-fade-in .1s;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-    -webkit-animation-fill-mode: none;
-    animation-fill-mode: none;
-    -webkit-animation-delay: 1.1s;
-    animation-delay: 1.1s; }
+  .environment {
+    margin-bottom: 0; }
+    .environment .enviroment-box {
+      display: none; }
+    .environment .list-box {
+      padding: 5vh 0; }
+      .environment .list-box .list-item p {
+        font-size: 4vw; }
+    .environment .enviroment-swiper-box {
+      display: block;
+      opacity: 1; }
+      .environment .enviroment-swiper-box .list-box .list-item p {
+        font-size: 5vw; }
+    .environment.animated .enviroment-swiper-box {
+      -webkit-animation: an-fade-in .1s;
+      animation: an-fade-in .1s;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+      -webkit-animation-fill-mode: none;
+      animation-fill-mode: none;
+      -webkit-animation-delay: 1.1s;
+      animation-delay: 1.1s; }
   .section-title:not(.about-section-title) {
     font-size: 11.5vw;
     letter-spacing: -.05em;
@@ -2546,8 +2567,6 @@ footer {
     width: auto; }
   .swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
     bottom: 4%; }
-  .cs-item .cs-box .cs-top {
-    height: 70%; }
   .cs-item .cs-box .cs-bottom {
     height: 28%; }
   .mobile-screem {

@@ -170,7 +170,7 @@ header {
 			}
 			article {
 				@media screen and (max-width: 768px) {
-					padding: 1em;
+					padding: 1.5em 1em;
 				}
 			}
 		}
@@ -251,13 +251,13 @@ header {
 			text-align: left;
 			left: 8em;
 			@media screen and (max-width: 1025px) {
-				width: 90%;
+				width: 75%;
 				max-width: unset;
 				left: calc(50% + 4em);
 				transform: translateX(-50%);
 			}
 			@media screen and (max-width: 760px) {
-				left: calc(50% + 3em);
+				left: calc(50% + 2em);
 			}
 			.list-item {
 				width:  20%;

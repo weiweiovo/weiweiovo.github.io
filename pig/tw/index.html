@@ -12,11 +12,14 @@
 	<link rel="alternate" href="/tw/" hreflang="zh-tw">
 	<link rel="stylesheet" type="text/css" href="../css/reset.css">
 	<link rel="stylesheet" href="../css/swiper.min.css">
+
+	<link rel="stylesheet"  href="../css/lightslider.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300|Marvel|Nunito+Sans:200,300|Open+Sans:300|Scheherazade&display=swap" rel="stylesheet">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 	<script src="../js/swiper4.0.2.min.js"></script>
+	<script src="../js/lightslider.js"></script> 
 	<script type="text/javascript" src="../js/main.js"></script>
 
 </head>
@@ -238,7 +241,23 @@
 						</li>
 				 	</ul>
 				</div>
-				<div class="enviroment-swiper-box swiper-container">
+				<div class="enviroment-swiper-box">
+	                <ul id="env-box" class="list-box gallery list-unstyled">
+	                    <li class="list-item first"> 
+	                        <div class="vision color-bg"><img src="../images/env01.jpg"></div>
+							<p>盡情揮灑  成就自我</p>
+	                    </li>
+	                    <li class="list-item"> 
+		                	<div class="vision color-bg"><img src="../images/env02.jpg"></div>
+							<p>舒適的工作環境</p>
+		                </li>
+	                    <li class="list-item">
+							<div class="vision color-bg"><img src="../images/env03.jpg"></div>
+							<p>輕鬆自在的討論氛圍</p>
+	                    </li>
+	                </ul>
+	            </div>
+				<!-- <div class="enviroment-swiper-box swiper-container">
 					<ul class="list-box swiper-wrapper">
 				 		<li class="swiper-slide list-item">
 							<div class="vision color-bg"><img src="../images/env01.jpg"></div>
@@ -253,7 +272,7 @@
 							<p>輕鬆自在的討論氛圍</p>
 						</li>
 				 	</ul>
-				</div>
+				</div> -->
 			</div>
 		</section>
 		<section class="join-us section page06">
@@ -390,16 +409,36 @@
 		}
 	})
 
-	var envSwiper = new Swiper ( ".enviroment-swiper-box", {
-	  	slidesPerView: 1,
-      	centeredSlides: true,
-      	loop: true,
-      	speed:800,
-      	autoplay: {
-        	delay: 2500,
-        	disableOnInteraction: false,
-      	},
-	})
+	// var envSwiper = new Swiper ( ".enviroment-swiper-box", {
+	//   	slidesPerView: 1,
+ //      	centeredSlides: true,
+ //      	loop: true,
+ //      	speed:800,
+ //      	autoplay: {
+ //        	delay: 2500,
+ //        	disableOnInteraction: false,
+ //      	},
+	// })
+	$('#env-box').lightSlider({
+        gallery:true,
+        item:1,
+        slideMargin: 0,
+        speed:1200,
+        auto:true,
+        loop:true, 
+        pauseOnHover: false,
+        onBeforeSlide: function (el) {
+        	if($('.lSSlideWrapper').hasClass('is-show')) {
+            	$('.lSSlideWrapper').removeClass('is-show');
+            }
+            
+        },
+        onAfterSlide: function(el) {
+            if(el.children('.first').hasClass('active')) {
+            	$('.lSSlideWrapper').addClass('is-show');
+            } 
+        }
+	});
 	
 </script>
 

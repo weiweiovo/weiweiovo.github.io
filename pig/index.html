@@ -237,7 +237,7 @@
 				 	</ul>
 				</div>
 				<div class="enviroment-swiper-box">
-	                <ul id="env-box" class="list-box gallery list-unstyled cS-hidden">
+	                <ul id="env-box" class="list-box gallery list-unstyled">
 	                    <li class="list-item first"> 
 	                        <div class="vision color-bg"><img src="images/env01.jpg"></div>
 							<p>Enjoy yourself and achieve</p>
@@ -410,12 +410,9 @@
         gallery:true,
         item:1,
         slideMargin: 0,
-        speed:500,
+        speed:1200,
         auto:true,
-        loop:true,
-        onSliderLoad: function() {
-            $('#env-box').removeClass('cS-hidden');
-        }  
+        loop:true,  
 	});
 	// var envSwiper = new Swiper ( ".enviroment-swiper-box", {
 	//   	slidesPerView: 1,
