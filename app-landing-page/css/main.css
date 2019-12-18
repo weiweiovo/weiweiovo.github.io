@@ -78,9 +78,9 @@ section {
   cursor: pointer;
   -webkit-animation: fadeInUp 1s 1;
   animation: fadeInUp 1s 1;
-  -webkit-box-shadow: 0 5px 5px #00000054;
-  box-shadow: 0 5px 5px #00000054;
-  background: rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 5px 5px #00000029;
+  box-shadow: 0 5px 5px #00000029;
+  background: rgba(0, 0, 0, 0.1);
   -webkit-transition: .35s;
   -o-transition: .35s;
   transition: .35s;
@@ -97,12 +97,12 @@ section {
     background: #fff;
     -webkit-animation: anFloatDown 2s infinite;
     animation: anFloatDown 2s infinite;
-    -webkit-box-shadow: 0 5px 5px #000000cf;
-    box-shadow: 0 5px 5px #000000cf; }
+    -webkit-box-shadow: 0 5px 5px #00000029;
+    box-shadow: 0 5px 5px #00000029; }
   .btn-next:hover {
     opacity: .8;
     bottom: calc(6% + 2px);
-    background: rgba(0, 0, 0, 0.35); }
+    background: rgba(0, 0, 0, 0.2); }
     .btn-next:hover::after {
       -webkit-animation: paused;
       animation: paused; }
@@ -147,8 +147,8 @@ section {
       position: absolute;
       display: block; }
       .main-vision-box .main-vision .coin img {
-        -webkit-animation: anFloatUp 10s infinite;
-        animation: anFloatUp 10s infinite; }
+        -webkit-animation: anFloatUp 6s infinite;
+        animation: anFloatUp 6s infinite; }
     .main-vision-box .main-vision .coin1 {
       right: -65px;
       bottom: 120px; }
@@ -395,8 +395,8 @@ footer {
     -webkit-transform: translateY(0);
     transform: translateY(0); }
   50% {
-    -webkit-transform: translateY(-30px);
-    transform: translateY(-30px); }
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px); }
   100% {
     -webkit-transform: translateY(0);
     transform: translateY(0); } }
@@ -406,8 +406,8 @@ footer {
     -webkit-transform: translateY(0);
     transform: translateY(0); }
   50% {
-    -webkit-transform: translateY(-30px);
-    transform: translateY(-30px); }
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px); }
   100% {
     -webkit-transform: translateY(0);
     transform: translateY(0); } }
