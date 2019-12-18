@@ -148,9 +148,7 @@ section {
       display: block; }
       .main-vision-box .main-vision .coin img {
         -webkit-animation: anFloatUp 5s infinite;
-        animation: anFloatUp 5s infinite;
-        -webkit-animation-delay: .75s;
-        animation-delay: .75s; }
+        animation: anFloatUp 5s infinite; }
     .main-vision-box .main-vision .coin1 {
       right: -65px;
       bottom: 120px; }
