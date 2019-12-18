@@ -149,7 +149,8 @@ section {
 			position:absolute;
 			display: block;
     		img {
-				animation: anFloatUp 6s infinite;
+				animation: anFloatUp 5s infinite;
+				animation-delay:.75s;
 			}
 			
 		}
