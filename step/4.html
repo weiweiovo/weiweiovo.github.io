@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:description" content="">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+	<header>
+		<h3 class="f20">步驟 4 / 5</h3>
+	</header>
+	<div class="main-container step-4">
+		<p class="title f18">
+			近期身體狀況（近三個月）
+		</p>
+		<form class="btn-list">
+			<div class="item f16 q01">
+				<h2 class="tit flex-center f20">
+					<img src="./images/401.png" style="height: 2.2em">
+					<span>疼痛有無</span>
+				</h2>
+				<div class="radio">
+					<div class="input-box">
+						<input type="radio" id="q01-yes" name="q01" checked>
+						<label class="input-check f16" for="q01-yes">
+							<div class="flex-center">
+								<span class="checkbox"></span>
+								<span>有</span>
+							</div>
+						</label>	
+					</div>
+					<div class="input-box">
+						<input type="radio" id="q01-no" name="q01">
+						<label class="input-check f16" for="q01-no">
+							<div class="flex-center">
+								<span class="checkbox"></span>
+								<span>無</span>
+							</div>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="item f16">
+				<h2 class="tit flex-center f20">
+					<img src="./images/402.png">
+					<span>不舒服部位</span>
+				</h2>
+				<div class="select-box">
+					<div class="box flex-center">
+						<p>區域</p>
+						<select class="select input-box" id="bodyArea">
+							<option value="upperLimb">上肢</option>
+							<option value="lowerLimb">下肢</option>
+							<option value="trunk">軀幹</option>
+						</select>						
+					</div>
+					<div class="box flex-center body-part">
+						<p>部位</p>
+						<select class="select input-box" id="upperLimb">
+							<option value="手">手</option>
+							<option value="前臂">前臂</option>
+							<option value="上臂">上臂</option>
+							<option value="肩膀">肩膀</option>
+							<option value="手肘">手肘</option>
+							<option value="手腕">手腕</option>
+						</select>
+						<select class="select hide input-box" id="lowerLimb">
+							<option value="髖部">髖部</option>
+							<option value="大腿">大腿</option>
+							<option value="膝蓋">膝蓋</option>
+							<option value="小腿">小腿</option>
+							<option value="腳踝">腳踝</option>
+							<option value="足部">足部</option>
+						</select>
+						<select class="select hide input-box" id="trunk">
+							<option value="頸部">頸部</option>
+							<option value="上背部">上背部</option>
+							<option value="下背部">下背部</option>
+							<option value="骨盆">骨盆</option>
+						</select>						
+					</div>
+				</div>
+			</div>
+			<div class="item f16">
+				<h2 class="tit flex-center f20">
+					<img src="./images/403.png">
+					<span>不舒服分數</span>
+				</h2>
+				<div class="slidecontainer">
+					<ul class="flex-bw item-list">
+						<li>0 <span class="txt">（無痛）</span> </li>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+						<li>6</li>
+						<li>7</li>
+						<li>8</li>
+						<li>9</li>
+						<li>10<span class="txt">（送醫）</span></li>
+					</ul>
+				  	<input type="range" min="0" max="10" value="0" class="slider red input-box" id="sportDay">
+				</div>
+			</div>
+		</form>
+		<div class="step-btn flex-bw">
+			<a class="btn" href="3.html">上一步</a>
+			<input class="btn" type="submit" value="下一步">
+		</div>
+	</div>
+</body>
+<script>  
+$(document).ready(function() {
+	var area = $('#bodyArea').val();
+	$('input[name="q01"]').change(function(){
+		if($('#q01-yes').prop('checked')) {
+			$('.item:not(.q01)').removeClass('close');
+			$('.input-box').attr('disabled',false);
+		} else {
+			$('.item:not(.q01)').addClass('close');
+			$('.input-box').attr('disabled',true);
+		}
+	})
+	$('#bodyArea').change(function(){
+		area = $('#bodyArea').val();
+		$('.body-part .select').hide();
+		$('#'+area).show();
+		$('.body-part .select').attr('disabled',true);
+		$('#'+area).attr('disabled',false);
+	})
+})
+</script>
+</html>

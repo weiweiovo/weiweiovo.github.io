@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:description" content="">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+	<header>
+		<h3 class="f20">步驟 3 / 5</h3>
+	</header>
+	<div class="main-container">
+		<p class="title f18">
+			我的活動量
+		</p>
+		<form class="slide-list">
+			<h2 class="f18">每週運動天數（平均）：</h2>
+			<div class="slidecontainer">
+				<div class="flex-bw">	
+					<ul class="flex-bw item-list">
+						<li>0</li>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+						<li>6</li>
+						<li>7</li>
+					</ul>
+					<p class="f16">(天)</p>
+				</div>
+			  	<input type="range" min="0" max="7" value="0" class="slider blue" id="sportDay">
+			</div>
+			<h2 class="f18">每次運動時間（平均）：</h2>		
+			<div class="slidecontainer">
+				<div class="flex-bw">
+					<ul class="flex-bw item-list">
+						<li>0</li>
+						<li>0.5</li>
+						<li>1</li>
+						<li>1.5</li>
+						<li>2</li>
+					</ul>
+					<p class="f16">(時)</p>
+				</div>
+			  	<input type="range" min="0" max="4" value="0" class="slider red" id="sportTime">
+			</div>
+			<h2 class="f18">坐著辦公時間（平均）：</h2>
+			<div class="slidecontainer">
+				<div class="flex-bw">
+					<ul class="flex-bw item-list">
+						<li>0</li>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+						<li>6</li>
+						<li>7</li>
+						<li>8</li>
+					</ul>
+					<p class="f16">(時)</p>
+				</div>
+			  	<input type="range" min="0" max="8" value="0" class="slider green" id="workTime">
+			</div>
+		</form>
+		<div class="step-btn flex-bw">
+			<a class="btn" href="2.html">上一步</a>
+			<input class="btn" type="submit" value="下一步">
+		</div>
+	</div>
+</body>
+<script>  
+$(document).ready(function() {
+
+})
+</script>
+</html>

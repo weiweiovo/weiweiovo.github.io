@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:description" content="">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+	<header>
+		<h3 class="f20">步驟 5 / 5</h3>
+	</header>
+	<div class="main-container step-5">
+		<p class="title f18">
+			請勾選一種訂閱管道
+		</p>
+		<form class="">
+			<div class="item">
+				<input type="radio" id="line" name="btn">
+				<label class="f16 list-item" for="line">
+					<div class="flex-center">
+						<i class="icon"><img src="./images/line.png"></i>
+						<div class="checkbox"></div>
+						<h2>Line</h2>
+					</div>
+				</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="email" name="btn">
+				<label class="f16 list-item" for="email">
+					<div class="flex-center">
+						<i class="icon"><img src="./images/email.png"></i>
+						<div class="checkbox"></div>
+						<h2>E-mail</h2>
+					</div>
+					<input id="emailAdd" class="email-box" type="email" name="email" placeholder="請輸入你的信箱" autocomplete="off" required="" disabled='disabled'>
+				</label>
+			</div>
+			
+		</form>
+		<div class="step-btn flex-bw">
+			<a class="btn" href="4.html">上一步</a>
+			<input class="btn" type="submit" value="完成送出">
+		</div>
+	</div>
+</body>
+<script>  
+$(document).ready(function() {
+	$('input[name="btn"]').change(function(){
+		if($('#email').prop('checked')) {
+			$('#emailAdd').attr('disabled',false);
+		} else {
+			$('#emailAdd').attr('disabled',true).val('');
+		}
+	})
+})
+</script>
+</html>

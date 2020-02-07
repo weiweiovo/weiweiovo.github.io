@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:description" content="">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+	<header>
+		<h3 class="f20">步驟 1 / 5</h3>
+	</header>
+	<div class="main-container step-1">
+		<p class="title f18">
+			請依據平常運動喜好與生活<br>點選下方種類（ 可複選2項 ）
+		</p>
+		<form class="list">
+			<div class="list-item">
+				<input type="checkbox" id="run" name="item">
+				<label for="run" data-code="run">
+					<img src="./images/run.jpg">
+					<h2 class="f16">跑步</h2>
+				</label>
+			</div>
+			<div class="list-item">
+				<input type="checkbox" id="fitness" name="item">
+				<label for="fitness" data-code="fitness">
+					<img src="./images/fitness.jpg">
+					<h2 class="f16">健身</h2>
+				</label>
+			</div>
+			<div class="list-item">
+				<input type="checkbox" id="basketball" name="item">
+				<label for="basketball" data-code="basketball">
+					<img src="./images/basketball.jpg">
+					<h2 class="f16">籃球</h2>
+				</label>
+			</div>
+			<div class="list-item">
+				<input type="checkbox" id="bicycle" name="item">
+				<label for="bicycle" data-code="bicycle">
+					<img src="./images/bicycle.jpg">
+					<h2 class="f16">自行車</h2>
+				</label>
+			</div>
+			<div class="list-item">
+				<input type="checkbox" id="swim" name="item">
+				<label for="swim" data-code="swim">
+					<img src="./images/swim.jpg">
+					<h2 class="f16">游泳</h2>
+				</label>
+			</div>
+			<div class="list-item">
+				<input type="checkbox" id="badminton" name="item">
+				<label for="badminton" data-code="badminton">
+					<img src="./images/badminton.jpg">
+					<h2 class="f16">羽球</h2>
+				</label>
+			</div>
+			<div class="list-item">
+				<input type="checkbox" id="golf" name="item">
+				<label for="golf" data-code="golf">
+					<img src="./images/golf.jpg">
+					<h2 class="f16">高爾夫</h2>
+				</label>
+			</div>
+			<div class="list-item">
+				<input type="checkbox" id="hiking" name="item">
+				<label for="hiking" data-code="hiking">
+					<img src="./images/hiking.jpg">
+					<h2 class="f16">健行</h2>
+				</label>
+			</div>
+			<div class="list-item">
+				<input type="checkbox" id="soccer" name="item">
+				<label for="soccer" data-code="soccer">
+					<img src="./images/soccer.jpg">
+					<h2 class="f16">足球</h2>
+				</label>
+			</div>
+			<div class="list-item">
+				<input type="checkbox" id="worker" name="item">
+				<label for="worker" data-code="worker">
+					<img src="./images/worker.jpg">
+					<h2 class="f16">上班族</h2>
+				</label>
+			</div>
+			<div class="list-item submit">
+				<input type="submit" id="next">
+				<label for="next">
+					<h2 class="f16">下一步</h2>
+					<img src="./images/next.png">
+				</label>
+			</div>
+			<div class="list-item">
+				<input type="checkbox" id="seniors" name="item">
+				<label for="seniors" data-code="seniors">
+					<img src="./images/seniors.jpg">
+					<h2 class="f16">銀髮族</h2>
+				</label>
+			</div>
+		</form>
+	</div>
+</body>
+<script>  
+$(document).ready(function() {
+	var checkItem = [];
+	$('.list-item:not(".submit") label').click(function() {//checkbox的input標籤點選事件
+		let item = $(this).prev('input');
+		checkItem = $('.list-item input[type="checkbox"]:checked');
+		if(!item.prop('checked')) {
+			checkItem.push(item);
+		} 
+		if (checkItem.length > 2) {//選中個數大於2
+			checkItem[2].click();
+			alert('最多只能選兩個')
+		}
+	});
+
+})
+</script>
+</html>
