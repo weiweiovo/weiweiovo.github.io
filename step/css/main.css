@@ -156,7 +156,7 @@ header {
     margin: 0 auto; }
 
 .btn-list {
-  padding: 10vh 8%;
+  padding: 5vh 8%;
   font-size: 0; }
   .btn-list input[type="checkbox"] {
     display: none; }
@@ -196,6 +196,7 @@ header {
 
 .step-btn {
   width: 100%;
+  max-width: 1024px;
   position: fixed;
   bottom: 0;
   display: -webkit-box;
@@ -362,7 +363,7 @@ header {
   position: relative;
   display: block;
   width: 70%;
-  margin: 10% auto;
+  margin: 6% auto;
   color: #333; }
   .step-5 .item input {
     display: none; }
@@ -378,10 +379,10 @@ header {
   .step-5 .item .checkbox {
     margin-right: 10%; }
   .step-5 .item .email-box {
-    position: absolute;
+    position: relative;
     display: block;
-    bottom: -4em;
     width: 100%;
+    margin: 5% auto;
     line-height: 2em;
     text-align: center;
     border-bottom: 1px solid #dedede;

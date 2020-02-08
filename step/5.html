@@ -57,6 +57,12 @@ $(document).ready(function() {
 			$('#emailAdd').attr('disabled',true).val('');
 		}
 	})
+	$('#mailAdd').on('focus',function() {
+		var _this = this;
+		setTimeout(function(){
+			_this.scrollIntoViewIfNeeded();
+		},200);
+	})
 })
 </script>
 </html>
